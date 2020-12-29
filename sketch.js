@@ -1,21 +1,26 @@
 
 
-var ground,box1,box2,box3;
 
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-
+const Render = Matter.Render;
+var dustbinO, paperO,groundO	
+var world;
 
 
 function setup() {
-	createCanvas(1200, 500);
+	createCanvas(1600, 700);
+	rectMode(CENTER);
 
 
-
-	groundo=new ground(width/2,670,width,20);
-	
+	engine = Engine.create();
+	world = engine.world;
+	dustbinO=new dustbin(1200,650);
+	paperO=new paper(200,450,40);
+	groundO=new ground(width/2,670,width,20);
+	//Create a Ground
 	
 
 	var render = Render.create({
@@ -28,41 +33,32 @@ function setup() {
 	  }
 	});
 
+	Engine.run(engine);
+	//Render.run(render);
   
 }
- 
-var ball = createSprite(200,20);
-
- var ground = createSprite(600,470,1400,10);
-
- var box1 = createSprite(1000,450,100,10);
- 
- var box2 = createSprite(950,400,10,120);
-
- var box3 = createSprite(1050,400,10,120);
-
- 
-
-
-	Engine.run(engine);
-  
-
 
 
 function draw() {
   rectMode(CENTER);
   background(0);
-  groundo.display();
-  drawSprites();
+ 
+  dustbinO.display();
+  paperO.display();
+  groundO.display();
+  
+ 
+  
+  
  
 }
 
 function keyPressed() {
-	if (keyCode === UP_ARROW) {
+  	if (keyCode === UP_ARROW) {
 
-	  Matter.Body.applyForce(papper.body,papper.body,{x:85,y:-85});
-  
-	}
+    	Matter.Body.applyForce(paperO.body,paperO.body.position,{x:85,y:-85});
+    
+  	}
 }
 
 
