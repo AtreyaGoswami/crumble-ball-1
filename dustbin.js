@@ -25,6 +25,21 @@ class dustbin
 	{
 			var posBottom=this.bottomBody.position;
 			var posLeft=this.leftWallBody.position;
-            var posRight=this.rightWallBody.position;
-    }
+			var posRight=this.rightWallBody.position;
+
+			
+
+			push()
+			translate(posLeft.x, posLeft.y);
+			rectMode(CENTER)
+			//strokeWeight(4);
+			angleMode(RADIANS)
+			fill(255)
+			stroke(255)
+			rotate(this.angle)
+			rect(0,0,this.wallThickness, this.dustbinHeight);
+			pop()
+
+	}
+
 }
