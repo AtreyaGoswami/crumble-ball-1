@@ -1,14 +1,14 @@
-class ground
-{
-	constructor(x,y,w,h)
-	{
-		var options={
-			isStatic:true			
-			}
+class ground {
+
+	constructor(x,y,w,h)n {
+	
+		var options = {
+			isStatic:true		
+}
 		this.x=x;
 		this.y=y;
-		this.w=w
-		this.h=h
+		this.w=w;
+		this.h=h;
 		this.body=Bodies.rectangle(x, y, w, h , options);
  		World.add(world, this.body);
 
@@ -16,16 +16,16 @@ class ground
 	display()
 	{
 			
-			var groundPos=this.body.position;		
+			var groundpos=this.body.position;		
 
 			push()
-			translate(groundPos.x, groundPos.y);
+			translate(groundpos.x, groundpos.y);
 			rectMode(CENTER)
 			strokeWeight(4);
 			fill(255,255,0)
 			rect(0,0,this.w, this.h);
-			pop()
-			
+		
+			pop()	
 	}
 
 }
