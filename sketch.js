@@ -16,7 +16,7 @@ function setup() {
 	world = engine.world;
 	dustbino=new dustbin(1200,650);
 	papero=new paper(200,450,40);
-	groundo=new Ground(width/2,670,width,15);
+	groundo=new ground(width/2,670,width,15);
 	
 
 	var render = Render.create({
