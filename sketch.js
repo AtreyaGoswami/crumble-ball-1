@@ -8,7 +8,7 @@ const Render = Matter.Render;
 var  papero,dustbino,groundo,world;
 
 function setup() {
-	createCanvas(1580, 700);
+	createCanvas(1600, 700);
 	
 	rectMode(CENTER);
 
